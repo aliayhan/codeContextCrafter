@@ -1,0 +1,43 @@
+# CodeContextCrafter - Production Dependencies
+#
+# These are the runtime dependencies required to run ccc.
+# For development dependencies, see requirements-dev.txt
+#
+# Install with: pip install -r requirements.txt
+
+# Token counting (used in dummy_model.py)
+tiktoken>=0.5.0
+
+# Tree-sitter for code parsing (pinned to 0.24.0 for compatibility with Aider 0.86.1)
+tree-sitter==0.24.0
+
+# AST-based code search (used in aider/repomap.py)
+grep-ast>=0.3.0
+
+# Syntax highlighting (used in aider/repomap.py)
+pygments>=2.15.0
+
+# Progress bars (used in aider/repomap.py)
+tqdm>=4.65.0
+
+# Graph operations (used in aider/repomap.py for pagerank)
+networkx>=3.0
+
+# NumPy and SciPy (required by networkx.pagerank)
+numpy>=1.26.0
+scipy>=1.15.0
+
+# Caching utilities (referenced in aider/repomap.py)
+diskcache>=5.6.0
+
+# Terminal formatting (used in aider/io.py and aider/repomap.py)
+rich>=13.0.0
+
+# Interactive prompts (used in aider/io.py)
+prompt-toolkit>=3.0.0
+
+# Version parsing (used in aider/repomap.py)
+packaging>=23.0
+
+# Shell argument parsing (used in aider utilities)
+oslex>=0.1.0

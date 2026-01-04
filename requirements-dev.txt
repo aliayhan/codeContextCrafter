@@ -1,0 +1,8 @@
+# Install with: pip install -r requirements-dev.txt
+# Includes production dependencies from requirements.txt
+
+-r requirements.txt
+
+# Testing
+pytest>=7.0.0
+pytest-cov>=4.0.0
