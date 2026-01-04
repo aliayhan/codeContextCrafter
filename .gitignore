@@ -29,3 +29,6 @@ htmlcov
 
 # --- Aider Cache (should never be created due to our modifications, but just in case) ---
 .aider.tags.cache.v*
+
+# Temporary issue files (to be created on GitHub)
+issue_*.md
