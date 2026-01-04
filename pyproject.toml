@@ -1,0 +1,67 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "codecontextcrafter"
+version = "1.0.0"
+description = "Build optimized code context for AI assistants with intelligent dependency tracking"
+readme = "README.md"
+requires-python = ">=3.12"
+license = {text = "Apache-2.0"}
+authors = [
+    {name = "CodeContextCrafter Contributors"}
+]
+keywords = ["ai", "code", "context", "dependencies", "code-analysis"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Software Development :: Code Generators",
+]
+
+dependencies = [
+    "tiktoken>=0.5.0",
+    "tree-sitter==0.24.0",
+    "grep-ast>=0.3.0",
+    "pygments>=2.15.0",
+    "tqdm>=4.65.0",
+    "networkx>=3.0",
+    "numpy>=1.26.0",
+    "scipy>=1.15.0",
+    "diskcache>=5.6.0",
+    "rich>=13.0.0",
+    "prompt-toolkit>=3.0.0",
+    "packaging>=23.0",
+    "oslex>=0.1.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+]
+
+[project.scripts]
+ccc = "codecontextcrafter.code_context_crafter:main"
+
+[project.urls]
+Homepage = "https://github.com/aliayhan/codeContextCrafter"
+Repository = "https://github.com/aliayhan/codeContextCrafter"
+Issues = "https://github.com/aliayhan/codeContextCrafter/issues"
+
+[tool.setuptools]
+packages = ["codecontextcrafter", "codecontextcrafter.traverser", "codecontextcrafter.aider", "codecontextcrafter.aider.resources"]
+
+[tool.setuptools.package-data]
+"codecontextcrafter.aider" = ["queries/**/*.scm", "queries/**/*.md", "resources/*.json", "resources/*.yml"]
+
+[tool.pytest.ini_options]
+testpaths = ["test"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = "-v --strict-markers"

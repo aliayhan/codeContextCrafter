@@ -1,0 +1,14 @@
+# Mark vendored Aider code to exclude from language statistics
+codecontextcrafter/aider/* linguist-vendored=true
+
+# Mark test files as tests (not vendored)
+test/* linguist-vendored=false
+
+# Mark tree-sitter query files correctly
+*.scm linguist-language=Scheme
+
+# Mark documentation files
+*.md linguist-documentation
+
+# Ensure Python files are detected
+*.py linguist-language=Python
